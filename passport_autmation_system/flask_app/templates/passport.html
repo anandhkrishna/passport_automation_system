@@ -1,0 +1,47 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+</head>
+<body>
+
+
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+<section class="container mt-4 mb-4">
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class="d-flex flex-row border rounded">
+          <div class="p-0 w-25">
+              <img src="{{ url_for('static', filename='pics/' + passport.passport_picture) }}"  class="img-thumbnail border-0" />
+            
+          </div>
+          <div class="pl-3 pt-2 pr-2 pb-2 w-75 border-left">
+              <h4 class="text-primary">ID:  INDJSS22X{{ passport.id }}</h4>
+              <h5 class="text-info">NAME: {{ passport.name }}</h5>
+              <h5 class="text-info">EMAIL: {{ passport.email }}</h5>
+              <h5 class="text-info">PHONE: {{ passport.phone }}</h5>
+              <h5 class="text-info">ADDRESS: {{ passport.address }}</h5>
+              <h5 class="text-info">DOB: {{ passport.date_of_birth }}</h5>
+              <h5 class="text-info">VERIFICATION: {{ passport.verification }}</h5>
+
+              <ul class="m-0 float-left" style="list-style: none; margin:0; padding: 0">
+              </ul>
+            <p class="text-right m-0"><a href="{{ url_for('verification')}}" class="btn btn-primary"><i class="far fa-user"></i> VERIFICATION</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+

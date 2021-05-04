@@ -1,0 +1,19 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    {% for passport in passports %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='pics/' + passport.author.image_file) }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ passport.author.username }}</a>
+              <small class="text-muted">{{ passport.date_posted.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <img class="rounded-square article-img"  src="{{ url_for('static', filename='pics/' + passport.passport_picture) }}">
+            <p><a class="article-title" href="{{ url_for('passport',passport_id=passport.id)}}">NAME: {{ passport.name }}</a></p>
+            <p class="title">ID:  INDJSS22X{{ passport.id }}</p>
+            
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
